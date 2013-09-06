@@ -1,32 +1,32 @@
-# SASL : DIGEST-MD5
+# SASL : GSSAPI
 
-This module is a JavaScript implementation of the DIGEST-MD5 SASL mechanism,
+This module is a JavaScript implementation of the GSSAPI Kerberos v5 SASL mechanism,
 which plugs into the [SASL](https://github.com/jaredhanson/js-sasl) framework.
 
 ## Install
 
 ##### npm
 
-    $ npm install sasl-digest-md5
+    $ npm install sasl-gssapi
 
 ##### volo
 
-    $ volo add jaredhanson/js-sasl-digest-md5 sasl-digest-md5
+    $ volo add sineer/js-sasl-gssapi sasl-gssapi
 
 For more information on using volo to manage JavaScript modules, visit [http://volojs.org/](http://volojs.org/).
 
 ## Usage
 
-Register the DIGEST-MD5 mechanism.
+Register the GSSAPI mechanism.
 
 ```javascript
-factory.use(require('sasl-digest-md5'));
+factory.use(require('sasl-gssapi'));
 ```
 
 Send an authentication response with necessary credentials.
 
 ```
-var mech = factory.create(['DIGEST-MD5']);
+var mech = factory.create(['GSSAPI']);
 var resp = mech.challenge('realm="elwood.innosoft.com",nonce="OA6MG9tEQGm2hh",qop="auth",algorithm=md5-sess,charset=utf-8')
                .response({ username: 'chris', password: 'secret', host: 'elwood.innosoft.com', serviceType: 'imap' });
 ```
@@ -68,9 +68,11 @@ To run tests in Node:
     
 ##### Status
 
-[![Travis CI](https://secure.travis-ci.org/jaredhanson/js-sasl-digest-md5.png)](http://travis-ci.org/jaredhanson/js-sasl-digest-md5)
+[![Travis CI](https://secure.travis-ci.org/sineer/js-sasl-gssapi.png)](http://travis-ci.org/sineer/js-sasl-gssapi)
 
 ## Credits
+
+  - [Jeremie Plante](http://github.com/sineer)
 
   - [Jared Hanson](http://github.com/jaredhanson)
 
@@ -78,4 +80,4 @@ To run tests in Node:
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2012 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
+Copyright (c) 2013 Jeremie Plante <[http://sin.io/](http://sin.io/)>

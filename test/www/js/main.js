@@ -6,10 +6,8 @@ require.config({
     'chai': 'chai/chai'
   },
   packages: [
-    { name: 'sasl-digest-md5', location: '../../../..' },
-    { name: 'crypto' },
-    { name: 'md5' },
-    { name: 'mocha-cloud', location: '../support', main: 'mocha-cloud' }
+    { name: 'sasl-gssapi', location: '../../../..' },
+    { name: 'kerberos', main: 'index.js' }
   ],
   shim: {
     'mocha': {

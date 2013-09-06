@@ -1,15 +1,15 @@
 define(['require',
         'mocha',
         'chai',
-        'mocha-cloud'],
-function(require, mocha, chai, cloud) {
+        'mocha-results'],
+function(require, mocha, chai, results) {
   mocha.setup('bdd');
   expect = chai.expect
   
-  require(['test/sasl-digest-md5.test',
-           'test/sasl-digest-md5.mechanism.test'],
+  require(['test/sasl-gssapi.test',
+           'test/sasl-gssapi.mechanism.test'],
   function() {
     if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
-    else { cloud(mocha.run()); }
+    else { results(mocha.run()); }
   });
 });

@@ -4,22 +4,22 @@
     factory(require('../main'));
   } else if (typeof define === 'function' && define.amd) {
     // AMD
-    define(['sasl-digest-md5'], factory);
+    define(['sasl-gssapi'], factory);
   }
-}(this, function(sasldigestmd5) {
+}(this, function(saslgssapi) {
 
-  describe('sasl-digest-md5', function() {
+  describe('sasl-gssapi', function() {
     
     it('should export Mechanism', function() {
-      expect(sasldigestmd5.Mechanism).to.be.a('function');
+      expect(saslgssapi.Mechanism).to.be.a('function');
     });
     
     it('should export Mechanism via module', function() {
-      expect(sasldigestmd5).to.equal(sasldigestmd5.Mechanism);
+      expect(saslgssapi).to.equal(saslgssapi.Mechanism);
     });
     
   });
   
-  return { name: 'test.sasl-digest-md5' };
+  return { name: 'test.sasl-gssapi' };
   
 }));

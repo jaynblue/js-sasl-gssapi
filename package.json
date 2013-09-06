@@ -1,19 +1,26 @@
 {
-  "name": "sasl-digest-md5",
+  "name": "sasl-gssapi",
   "version": "0.1.0",
-  "description": "JavaScript implementation of DIGEST-MD5 SASL mechanism.",
-  "keywords": ["sasl", "auth", "authn", "authentication", "security"],
+  "description": "JavaScript implementation of GSSAPI SASL mechanism.",
+  "keywords": [
+    "gssapi",
+    "sasl",
+    "auth",
+    "authn",
+    "authentication",
+    "security"
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/jaredhanson/js-sasl-digest-md5.git"
+    "url": "git://github.com/sineer/js-sasl-gssapi.git"
   },
   "bugs": {
-    "url": "http://github.com/jaredhanson/js-sasl-digest-md5/issues"
+    "url": "http://github.com/sineer/js-sasl-gssapi/issues"
   },
   "author": {
-    "name": "Jared Hanson",
-    "email": "jaredhanson@gmail.com",
-    "url": "http://www.jaredhanson.net/"
+    "name": "Jeremie Plante",
+    "email": "j@sin.io",
+    "url": "https://github.com/sineer/js-sasl-gssapi"
   },
   "licenses": [
     {
@@ -22,22 +29,67 @@
     }
   ],
   "main": "main",
+  "dependencies": {
+    "kerberos": "0.0.x"
+  },
   "devDependencies": {
     "express": "3.x.x",
     "mocha": "1.x.x",
     "chai": "1.x.x",
-    "mocha-phantomjs": "1.x.x",
-    "mocha-cloud": "0.0.1",
-    "term-canvas": "0.0.5",
-    "mocha-cloud-grid-view": "0.0.1"
+    "mocha-phantomjs": "2.x.x",
+    "mocha-cloud": "0.0.x",
+    "term-canvas": "0.0.x",
+    "mocha-cloud-grid-view": "0.0.x"
   },
-  "engines": { "node": ">= 0.4.0" },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
   "scripts": {
     "test": "node_modules/.bin/mocha --reporter spec --require test/node/bootstrap test/*.test.js"
   },
   "volo": {
     "dependencies": {
-      "crypto": "github:anchorjs/crypto/master"
+      "kerberos": "github:sineer/kerberos/master"
     }
+  },
+  "testling": {
+    "browsers": {
+      "firefox": [
+        "17.0",
+        "18.0",
+        "19.0"
+      ],
+      "chrome": [
+        "23.0",
+        "24.0",
+        "25.0"
+      ],
+      "ie": [
+        "6.0",
+        "7.0",
+        "8.0",
+        "9.0",
+        "10.0"
+      ],
+      "safari": [
+        "4.0",
+        "5.0.5",
+        "5.1",
+        "6.0"
+      ],
+      "opera": [
+        "10.0",
+        "10.5",
+        "11.0",
+        "11.5",
+        "11.6",
+        "12.0"
+      ]
+    },
+    "harness": "mocha",
+    "files": [
+      "test/bootstrap/testling.js",
+      "test/*.test.js"
+    ]
   }
 }

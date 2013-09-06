@@ -1,0 +1,13 @@
+{
+  "name": "sasl-gssapi",
+  "version": "0.1.0",
+  "description": "SASL GSSAPI mechanism factory.",
+  "keywords": ["gssapi","kerberos","sasl", "auth", "authn", "authentication", "security"],
+  "repo": "sineer/js-sasl-gssapi",
+  "main": "main.js",
+  "scripts": [
+    "main.js",
+    "lib/mechanish.js"
+  ],
+  "license": "MIT"
+}

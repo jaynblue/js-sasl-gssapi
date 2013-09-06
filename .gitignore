@@ -1,4 +1,5 @@
 test/www/js/lib
+kerberos
 
 # Mac OS X
 .DS_Store
